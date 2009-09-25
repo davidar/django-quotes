@@ -1,0 +1,18 @@
+USAGE
+Copy the quotes/ directory to somewhere in your PYTHONPATH, and add
+"quotes" to INSTALLED_APPS in settings.py.
+
+You will also need to create a file named quotes_config.py in your path. This
+file should contain a list/tuple named quotes, which contains tuples of the
+form (quote as a unicode object, author, reference url), e.g.:
+
+    quotes = (
+        (u'INSUFFICIENT DATA FOR MEANINGFUL ANSWER', 'Multivac',
+         'http://multivax.com/last_question.html'),
+        ...
+    )
+
+Then, place the following code where the tag should be displayed:
+    {% load quotes %} {% random_quote %}
+
+Author Homepage: http://da.vidr.cc/
